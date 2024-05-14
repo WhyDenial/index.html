@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список статей</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .article-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .article-list li {
+            margin: 10px 0;
+        }
+        .article-list li a {
+            text-decoration: none;
+            color: #1a73e8;
+            font-size: 18px;
+        }
+        .article-list li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Список статей</h1>
+    <ul class="article-list" id="articleList">
+        <!-- Здесь будут статьи -->
+    </ul>
+
+    <script>
+        // Пример списка статей с их заголовками и ссылками
+        const articles = [
+            { title: 'Вопрос 1', url: 'https://telegra.ph/1-vopros-5-seminar-05-14' },
+            { title: 'Статья 2', url: 'https://example.com/article2' },
+            { title: 'Статья 3', url: 'https://example.com/article3' },
+            // Добавьте больше статей по необходимости
+        ];
+
+        // Получаем элемент списка статей
+        const articleList = document.getElementById('articleList');
+
+        // Генерируем HTML для каждой статьи и добавляем в список
+        articles.forEach(article => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = article.url;
+            a.textContent = article.title;
+            a.target = '_blank'; // Открыть в новой вкладке
+            li.appendChild(a);
+            articleList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
